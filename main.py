@@ -1,5 +1,8 @@
-from DB.connection import DAO
+from data_persistence.database import Database
+from config.db_config import mydb
 import utils.format_data as format_data
+
+new_db = Database(mydb)
 
 def menuPrincipal():
     aContinuar = True
@@ -29,10 +32,9 @@ def menuPrincipal():
                 ejecutarOpcion(opcion)
 
 def ejecutarOpcion(opcion):
-    dao = DAO()
     if opcion == 1:
         try:
-            leyes = dao.traerLeyes()
+            leyes = new_db.get_all_laws()
             if len(leyes) > 0:
                 format_data.format_data(leyes)
             else:
