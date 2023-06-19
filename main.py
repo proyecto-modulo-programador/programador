@@ -1,5 +1,6 @@
 from DB.connection import DAO
-import functions
+import utils.format_data as format_data
+
 def menuPrincipal():
     aContinuar = True
     while(aContinuar):
@@ -33,7 +34,7 @@ def ejecutarOpcion(opcion):
         try:
             leyes = dao.traerLeyes()
             if len(leyes) > 0:
-                functions.traerLeyes2(leyes)
+                format_data.format_data(leyes)
             else:
                 print("No hay Leyes")
         except:

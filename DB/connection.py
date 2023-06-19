@@ -1,23 +1,24 @@
 import mysql.connector
-from mysql.connector import Error  
+from mysql.connector import Error
 
-#Data Access Object
+# Data Access Object
+
+
 class DAO():
- 
-    def __init__(self): 
+
+    def __init__(self):
         try:
             self.connect = mysql.connector.connect(
-                host ='bcoaayn1yza5y2d8potc-mysql.services.clever-cloud.com',
-                port = 3306,
-                user = 'uhdijdgl8byqc9qr',
-                password = 'ExBnDdB88xdyssCQYLtT',
-                db= "bcoaayn1yza5y2d8potc"
-            
-    )
+                host='bcoaayn1yza5y2d8potc-mysql.services.clever-cloud.com',
+                port=3306,
+                user='uhdijdgl8byqc9qr',
+                password='ExBnDdB88xdyssCQYLtT',
+                db="bcoaayn1yza5y2d8potc"
+
+            )
 
         except Error as ex:
             print(ex)
-
 
     def traerLeyes(self):
         if self.connect.is_connected():
