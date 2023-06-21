@@ -43,3 +43,18 @@ class Database():
                 print("No hay leyes")
         except Error:
             print(f"Hubo un error, {Error}")
+
+    def add_law(self, normative_num, date, keywords, description, category, jurisdiction, normative_type):
+        try:
+            # Esta validación es debido a que Si la ley es nacional, el órgano legislativo es el Congreso de la Nación; si la ley es provincial, el órgano legislativo es la Legislatura de Córdoba. Como en la DB tienen el mismo número de id, se puede usar la misma variable.
+            legislative_organ = jurisdiction
+
+            sql = "INSERT INTO leyes (nro_normativa, fecha, palabras_clave, descripcion, categorias_id_categoria, jurisdicciones_id_jurisdiccion, organos_legislativos_id_organo_legislativo, tipos_normativa_id_tipo_normativa) VALUES (%s ,%s ,%s ,%s ,%s ,%s ,%s, %s)"
+            val = (normative_num, date, keywords, description, category,
+                   jurisdiction, legislative_organ, normative_type)
+
+            self.mycursor.execute(sql, val)
+            self.db.commit()
+            return 'Ley agregada correctamente'
+        except Error:
+            return f"Hubo un error, {Error}" 
