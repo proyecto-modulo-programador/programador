@@ -58,3 +58,21 @@ class Database():
             return 'Ley agregada correctamente'
         except Error:
             return f"Hubo un error, {Error}" 
+
+    def update_law_by_register_num(self, register_num, description):
+        try:
+            self.mycursor.execute(
+                f"UPDATE leyes SET descripcion = '{description}' WHERE nro_registro = {register_num}")
+            self.db.commit()
+            return 'Ley actualizada correctamente'
+        except Error:
+            return f"Hubo un error, {Error}"
+
+    def delete_law_by_register_num(self, register_num):
+        try:
+            self.mycursor.execute(
+                f"DELETE FROM leyes WHERE nro_registro = {register_num}")
+            self.db.commit()
+            return 'Ley eliminada correctamente'
+        except Error:
+            return f"Hubo un error, {Error}" 
