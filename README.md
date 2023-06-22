@@ -16,7 +16,7 @@ Profesional.
 
 Se trata de un programa desarrollado en Python el cual ejecuta un menú en loop que te permite manipular mediante un CRUD leyes/normativas de Argentina, el menú está diagramado de la siguiente manera:
 
-
+```
 ########################### MENÚ ###########################
 1.- Traer Leyes
 2.- Traer Ley por N° de Ley
@@ -26,6 +26,7 @@ Se trata de un programa desarrollado en Python el cual ejecuta un menú en loop 
 6.- Borrar Ley
 7.- Salir
 #############################################################
+```
 
 Una vez seleccionada la acción y seguidos los pasos correspondientes de c/u, el menú vuelve a ejecutarse, dando así la funcionalidad de un programa en constante ejecución y sólo finaliza si el usuario marca la opción 7 para Salir.
 
