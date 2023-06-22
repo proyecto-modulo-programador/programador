@@ -10,4 +10,6 @@ Proyecto grupal para el módulo "programador" de la tecnicatura en desarrollo we
 - Carolina Gómez | [GitHub](https://github.com/Carito-Gomez)
 - Germán Emanuel Liendo | [GitHub](https://github.com/g3rm6nI)
 
-## Descripción del proyecto
+## Descripción del proyecto 
+
+- Cuando se da de alta una nueva normativa, la clase posee una validación para que el usuario no tenga que seleccionar manualmente el dato del órgano legislativa, esto es debido a que si la ley es nacional, el órgano legislativo es el Congreso de la Nación, por le contrario si la ley es provincial, corresponde la Legislatura de Córdoba. Entonces el usuario al seleccionar la jurisdicción, el órgano legislativo se selecciona automáticamente.
