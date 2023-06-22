@@ -1,4 +1,4 @@
-from mysql.connector import Error
+#from mysql.connector import Error
 import utils.format_data as format_data
 
 class Database():
